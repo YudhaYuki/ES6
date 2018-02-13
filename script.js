@@ -124,6 +124,9 @@ var ages5 = years.map(function(el) {
 console.log(ages5);
 
 // ES6
-const ages6 = years.map(el => 2016 - el);
+let ages6 = years.map(el => 2016 - el);
+console.log(ages6);
+
+ages6 = years.map((el, index) => `Age element ${index + 1}: ${2016 - el}.`);
 console.log(ages6);
 
