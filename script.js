@@ -140,7 +140,7 @@ console.log(ages6);
 
 
 /////////////////////////-------------- Arrow function II-----------------------/////////////////
-
+/*
 // ES5
 var box5 = {
     color: 'green',
@@ -170,7 +170,7 @@ const box6 = {
     }
 } 
 box6.clickMe();
-
+*/
 /*
 const box7 = {
     color: 'green',
@@ -185,6 +185,9 @@ const box7 = {
 } 
 box7.clickMe();
 */
+
+
+/*
 
 function Person(name) {
     this.name = name;
@@ -214,5 +217,18 @@ Person.prototype.myFriends6 = function(friends) {
 }
 
 new Person('Mike').myFriends6(friends);
+*/
 
 
+/////////////////////////-------------- DESTRUCTURING -----------------------/////////////////
+
+// E5
+var john = ['John', 26];
+// var name = john[0];
+// var age = john[1];
+
+
+// ES6
+const [name, age] = ['John', 26];
+console.log(name);
+console.log(age);
