@@ -248,3 +248,19 @@ console.log(lastName);
 const {firstName: a, lastName: b} = obj;
 console.log(a);
 console.log(b);
+
+
+// Another example: Create function that return the age of a person and thier emaining times before retirement
+
+function calcAgeRetirement(year) {
+    const age = new Date().getFullYear() - year;
+    return [age, 65 - age];
+}
+
+const [age2, retirement] = calcAgeRetirement(1990);
+console.log(age2);
+console.log(retirement)
+
+// Destructruing is a good solution for this particular case 
+
+
