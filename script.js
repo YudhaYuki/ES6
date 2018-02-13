@@ -232,3 +232,19 @@ var john = ['John', 26];
 const [name, age] = ['John', 26];
 console.log(name);
 console.log(age);
+
+const obj = {
+    firstName: 'John',
+    lastName: 'Smith'
+};
+
+const {firstName, lastName} = obj;
+console.log(firstName);
+console.log(lastName);
+
+
+// If we don't want the varibale name to match with the key names
+// Then we can also use different names, just like the following :
+const {firstName: a, lastName: b} = obj;
+console.log(a);
+console.log(b);
