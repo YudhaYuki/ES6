@@ -102,3 +102,10 @@ console.log('This is ' + firstName + ' ' + lastName + '. He was born in ' + year
 
 // Es6
 console.log(`This is ${firstName} ${lastName}. He was born in ${yearOfBirth}. Today, he is ${calcAge(yearOfBirth)} years old.`);
+
+
+const n = `${firstName} ${lastName}`;
+console.log(n.startsWith('J'));
+console.log(n.endsWith('th'));
+console.log(n.includes(' '));
+console.log(`${firstName} `.repeat(5));
