@@ -513,3 +513,7 @@ for (let [key, value] of question.entries()) {
         console.log(`Answer ${key}: ${value}`);
     }
 }
+
+// parseInt converts string into integer
+const ans = parseInt(prompt('Write the correct answer'));
+console.log(question.get(ans === question.get('correct')));
