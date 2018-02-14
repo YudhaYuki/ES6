@@ -466,6 +466,7 @@ var emily = new SmithPerson('Emliy', 1983, 'Diaz', 'Spanish');
 
 
 // ES6
+/*
 function SmithPerson(firstName, yearOfBirth, lastName = 'Smith', nationality = 'American') {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -476,3 +477,22 @@ function SmithPerson(firstName, yearOfBirth, lastName = 'Smith', nationality = '
 var john = new SmithPerson('John', 1990);
 
 var emily = new SmithPerson('Emliy', 1983, 'Diaz', 'Spanish');
+*/
+
+
+
+/////////////////////////-------------- MAPS -----------------------/////////////////
+
+const question = new Map();
+
+question.set('question', 'what is the official name of the latest major Javasacript version?');
+
+question.set(1, 'ES5');
+question.set(2, 'ES6');
+question.set(3, 'ES2015');
+question.set(4, 'ES7');
+question.set('correct', 3);
+question.set(true, 'Your answer is correct!');
+question.set(false, 'Sorry, you are wrong, TRY again!');
+
+console.log(question.get('question'));
