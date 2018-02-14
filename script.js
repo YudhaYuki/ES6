@@ -486,7 +486,6 @@ var emily = new SmithPerson('Emliy', 1983, 'Diaz', 'Spanish');
 const question = new Map();
 
 question.set('question', 'what is the official name of the latest major Javasacript version?');
-
 question.set(1, 'ES5');
 question.set(2, 'ES6');
 question.set(3, 'ES2015');
@@ -496,3 +495,10 @@ question.set(true, 'Your answer is correct!');
 question.set(false, 'Sorry, you are wrong, TRY again!');
 
 console.log(question.get('question'));
+console.log(question.size);
+
+if (question.has(4)) {
+    question.delete(4);    
+}
+
+question.clear();
