@@ -569,7 +569,7 @@ Person6.greeting();
 
 //////////////////-------------- CLASSES WITH SUBCLASSES -----------------------/////////////////
 
-
+/*
 // ES5
 var Person5 = function(name, yearOfBirth, job) {
     this.name = name;
@@ -637,3 +637,85 @@ const johnAthlete6 = new Athlete6('John', 1990, 'Swimmer', 3, 10);
 
 johnAthlete6.wonMedal();
 johnAthlete6.calculateAge();
+*/
+
+//////////////////-------------- CHALLENGE -----------------------/////////////////
+
+class Element {
+    constructor(name, buildYear) {
+        this.name = name;
+        this.buildYear = buildYear;
+    }
+}
+
+class Park extends Element {
+    constructor(name, buildYear, area, numTrees) {
+        super(name, buildYear);
+        this.area = area; //km2
+        this.numTree = numTrees;
+    }
+
+    // method to clalculate tree density
+    treeDensity() {
+        const density = this.numTrees / this.area;
+        console.log(`${this.name} has a tree density of ${density} trees per square km.`);
+    }
+}
+
+class Street extends Element {
+    constructor(name, buildYear, length, size = 3) {
+        super(name, buildYear);
+        this.length = length;
+        this.size = size;
+    }
+
+    // Method classify street
+    classifyStreet() {
+        const classification = new Map();
+        classification.set(1, 'tiny');
+        classification.set(2, 'small');
+        classification.set(3, 'normal');
+        classification.set(4, 'big');
+        classification.set(5, 'huge');
+
+        console.log(`${this.name}, build in ${this.buildYear}, is a ${classification.get(this.size)} street.`);
+        
+    }
+}
+
+// Create some data, so to create some object
+// Creating an array which contains all of the three parks
+const allParks = [
+        new Park('Green Park', 1987, 0.2, 215),
+        new Park('National Park', 1994, 2.9, 3541),
+        new Park('Oak Park', 1943, 0.4, 949)
+    ];
+
+const allStreets = [
+        new Street('Ocean Avenue', 1999, 1.1, 4),
+        new Street('Evergreen Street', 2008, 2.7, 2),
+        new Street('4th Street', 2015, 0.8),
+        new Street('Sunset Boulevard', 1982, 2.5, 5)
+    ];
+
+// Generating our report
+// Write one function for each report and then pass in our array which contains our data
+function reportParks(p) {
+
+    console.log('---------- PARKS REPORT ----------');
+    
+    // Density
+    p.forEach(el => el.treeDensity());
+
+    // Average age
+    
+
+    // Which park has more than 1000 trees
+}
+
+function reportStreets(s) {
+
+}
+
+reportParks(allParks);
+reportStreets(allStreets);
