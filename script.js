@@ -389,6 +389,7 @@ Array.from(all).forEach(cur => cur.style.color = 'purple');
 
 /////////////////////////-------------- Rest Parameter -----------------------/////////////////
 
+/*
 // ES5
 function isFullAge5() {
     // console.log(arguments);
@@ -411,5 +412,30 @@ function isFullAge6(...years) {
 
 // isFullAge6(1990, 1999, 1965);
 isFullAge5(1990, 1999, 1965, 2016, 1987);
+*/
 
+// ES5
+function isFullAge5(limit) {
+    console.log(arguments);
+    var argsArr = Array.prototype.slice.call(arguments, 1);
+
+    console.log(argsArr);
+
+    argsArr.forEach(function(cur) {
+        console.log((2016 - cur) >= 18);
+    })
+}
+
+isFullAge5(21, 1990, 1999, 1965);
+// isFullAge5(1990, 1999, 1965, 2016, 1987);
+
+
+// Trasnform argument (ex. 1990, 1999, 1965) into an array and pass them into function (exp isFullAge6)
+function isFullAge6(...years) {
+    // console.log(years);
+    years.forEach(cur => console.log((2016 - cur) >= 18));
+}
+
+// isFullAge6(1990, 1999, 1965);
+isFullAge5(1990, 1999, 1965, 2016, 1987);
 
