@@ -689,14 +689,25 @@ const allParks = [
         new Park('Green Park', 1987, 0.2, 215),
         new Park('National Park', 1994, 2.9, 3541),
         new Park('Oak Park', 1943, 0.4, 949)
-    ];
+        ];
 
 const allStreets = [
         new Street('Ocean Avenue', 1999, 1.1, 4),
         new Street('Evergreen Street', 2008, 2.7, 2),
         new Street('4th Street', 2015, 0.8),
         new Street('Sunset Boulevard', 1982, 2.5, 5)
-    ];
+        ];
+
+// External function
+function calc(arr){
+
+    // Reduce method, is used to reduce an array to a single value.
+    const sum = arr.reduce((prev, cur, index) => prev + cur, 0);
+    
+    return [sum, sum / arr.length];
+}
+
+
 
 // Generating our report
 // Write one function for each report and then pass in our array which contains our data
@@ -708,7 +719,10 @@ function reportParks(p) {
     p.forEach(el => el.treeDensity());
 
     // Average age
-    
+    const ages = p.map(el => new Date().getFullYear() - el.buildYear);
+    const [totalAge, avgAge] = calc(ages);
+    console.log(`Our ${p.length} parks have an average of ${avgAge} years.`);
+
 
     // Which park has more than 1000 trees
 }
