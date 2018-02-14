@@ -416,26 +416,27 @@ isFullAge5(1990, 1999, 1965, 2016, 1987);
 
 // ES5
 function isFullAge5(limit) {
-    console.log(arguments);
+    // console.log(arguments);
     var argsArr = Array.prototype.slice.call(arguments, 1);
 
     console.log(argsArr);
 
     argsArr.forEach(function(cur) {
-        console.log((2016 - cur) >= 18);
+        console.log((2016 - cur) >= limit);
     })
 }
 
-isFullAge5(21, 1990, 1999, 1965);
+// isFullAge5(16, 1990, 1999, 1965);
 // isFullAge5(1990, 1999, 1965, 2016, 1987);
 
 
+// ES6
 // Trasnform argument (ex. 1990, 1999, 1965) into an array and pass them into function (exp isFullAge6)
-function isFullAge6(...years) {
+function isFullAge6(limit, ...years) {
     // console.log(years);
-    years.forEach(cur => console.log((2016 - cur) >= 18));
+    years.forEach(cur => console.log((2016 - cur) >= limit));
 }
 
 // isFullAge6(1990, 1999, 1965);
-isFullAge5(1990, 1999, 1965, 2016, 1987);
+isFullAge5(16, 1990, 1999, 1965, 2016, 1987);
 
