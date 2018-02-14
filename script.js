@@ -313,3 +313,21 @@ for (const cur of boxesArr6) {
 
     cur.textContent = 'I changed to blue !';
 }
+
+
+
+
+// ES5
+var ages = [12, 17, 8, 21, 14, 11];
+
+var full = ages.map(function(cur) {
+    return cur >= 18;
+});
+
+console.log(full);
+
+// Finsing position of element that is true
+console.log(full.indexOf(true));
+
+// Finding the age with true element
+console.log(ages[full.indexOf(true)]);
