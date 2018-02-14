@@ -221,7 +221,7 @@ new Person('Mike').myFriends6(friends);
 
 
 /////////////////////////-------------- DESTRUCTURING -----------------------/////////////////
-
+/*
 // E5
 var john = ['John', 26];
 // var name = john[0];
@@ -262,5 +262,31 @@ console.log(age2);
 console.log(retirement)
 
 // Destructruing is a good solution for this particular case 
+*/
 
 
+
+
+
+/////////////////////////-------------- ARRAY -----------------------/////////////////
+
+const boxes = document.querySelectorAll('.box');
+
+/*
+// ES5
+var boxesArr5 = Array.prototype.slice.call(boxes);
+
+boxesArr5.forEach(function(cur) {
+    cur.style.backgroundColor = 'dodgerblue' ;
+});
+*/
+
+
+// ES6
+/*
+const boxesArr6 = Array.from(boxes);
+boxesArr6.forEach(cur => cur.style.backgroundColor = 'dodgerblue');
+*/
+
+// or this way
+Array.from(boxes).forEach(cur => cur.style.backgroundColor = 'dodgerblue');
