@@ -505,4 +505,8 @@ if (question.has(4)) {
 // question.clear();
 
 
-question.forEach((value, key) => console.log(`This is ${key}, and it's set to ${value}`));
+// question.forEach((value, key) => console.log(`This is ${key}, and it's set to ${value}`));
+
+for (let [key, value] of question.entries()) {
+    console.log(`This is ${key}, and it's set to ${value}`);
+}
