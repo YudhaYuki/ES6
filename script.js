@@ -652,7 +652,7 @@ class Park extends Element {
     constructor(name, buildYear, area, numTrees) {
         super(name, buildYear);
         this.area = area; //km2
-        this.numTree = numTrees;
+        this.numTrees = numTrees;
     }
 
     // method to clalculate tree density
@@ -725,10 +725,21 @@ function reportParks(p) {
 
 
     // Which park has more than 1000 trees
+    const i = p.map(el => el.numTrees).findIndex(el => el >= 1000);
+    console.log(`${p[i].name} has more than 1000 trees.`);
 }
+
+
 
 function reportStreets(s) {
 
+    console.log('---------- TREES REPORT ----------');
+
+    // Total and average length of the town's streets
+    const [totalLength, avgLength] = calc(s.map(el => el.length));
+    console.log(`Our ${s.length} streets have a total length of ${totalLength} km, with an average of ${avgLength} km.`);
+ 
+    // Classify sizes
 }
 
 reportParks(allParks);
