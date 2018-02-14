@@ -331,3 +331,14 @@ console.log(full.indexOf(true));
 
 // Finding the age with true element
 console.log(ages[full.indexOf(true)]);
+
+
+
+
+// ES6
+
+// Finsing position of element that is true
+console.log(ages.findIndex(cur => cur >= 18));
+
+// Finding the age with true element
+console.log(ages.find(cur => cur >= 18));
