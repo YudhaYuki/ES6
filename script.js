@@ -549,6 +549,14 @@ class Person6 {
         var age = new Date().getFullYear - this.yearOfBirth;
         console.log(age);
     }
+
+    // static methods are method that simply attahced to the class but not inherited by the class intances, so by the object that we create through that class
+    static greeting() {
+        console.log('Hey there !');
+    }
 }
 
-const john6 = new Person6('John', 1990, 'Teacher')
+const john6 = new Person6('John', 1990, 'Teacher');
+
+// We have to call it like this, we cant use it in john6 for example
+Person6.greeting();
