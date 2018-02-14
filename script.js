@@ -283,15 +283,16 @@ boxesArr5.forEach(function(cur) {
 
 
 // ES6
-/*
+
 const boxesArr6 = Array.from(boxes);
-boxesArr6.forEach(cur => cur.style.backgroundColor = 'dodgerblue');
-*/
+// boxesArr6.forEach(cur => cur.style.backgroundColor = 'dodgerblue');
+
 
 // or this way
 Array.from(boxes).forEach(cur => cur.style.backgroundColor = 'dodgerblue');
 
 // ES5
+/*
 for(var i = 0; i < boxesArr5.length; i++) {
     
     if(boxesArr5[i].className === 'box blue') {
@@ -300,4 +301,14 @@ for(var i = 0; i < boxesArr5.length; i++) {
     } 
 
     boxesArr5[i].textContent = 'I changed to blue !';
+}
+*/
+
+// ES6
+for (const cur of boxesArr6) {
+    if (cur.className === 'box blue') {
+        continue;
+    }
+
+    cur.textContent = 'I changed to blue !';
 }
