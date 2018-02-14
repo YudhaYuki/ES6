@@ -498,7 +498,11 @@ console.log(question.get('question'));
 console.log(question.size);
 
 if (question.has(4)) {
-    question.delete(4);    
+    // question.delete(4);    
+    console.log('Answer 4 is here');
 }
 
-question.clear();
+// question.clear();
+
+
+question.forEach((value, key) => console.log(`This is ${key}, and it's set to ${value}`));
