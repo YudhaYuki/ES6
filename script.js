@@ -522,7 +522,7 @@ console.log(question.get(ans === question.get('correct')));
 */
 
 /////////////////////////-------------- CLASSES -----------------------/////////////////
-
+/*
 // ES5
 var Person5 = function(name, yearOfBirth, job) {
     this.name = name;
@@ -560,3 +560,45 @@ const john6 = new Person6('John', 1990, 'Teacher');
 
 // We have to call it like this, we cant use it in john6 for example
 Person6.greeting();
+*/
+
+
+
+
+
+
+//////////////////-------------- CLASSES WITH SUBCLASSES -----------------------/////////////////
+
+
+// ES5
+var Person5 = function(name, yearOfBirth, job) {
+    this.name = name;
+    this.yearOfBirth = yearOfBirth;
+    this.job = job;
+}
+
+Person5.prototype.calculateAge = function() {
+    var age = new Date().getFullYear() - this.yearOfBirth;
+    console.log(age);
+}
+
+var Athlete5 = function(name, yearOfBirth, job, olympicGames, medals) {
+
+    Person5.call(this, name, yearOfBirth, job);
+    this.olympicGames = olympicGames;
+    this.medals = medals;
+}
+
+// By doing this, the two functions contructor are connected and the prototype chain should work fine as well
+Athlete5.prototype = Object.create(Person5.prototype);
+
+// Setting method on the prototype property of the Athlete5 function constructor
+Athlete5.prototype.wonMedal = function() {
+    this.medals++;
+    console.log(this.medals);
+}
+
+var johnAthlete5 = new Athlete5('John', 1990, 'Swimmer', 3, 10);
+
+johnAthlete5.calculateAge();
+johnAthlete5.wonMedal();
