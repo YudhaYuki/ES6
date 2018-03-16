@@ -15,6 +15,7 @@ console.log(name6);
 */
 
 
+/*
 // ES5
 function driversLicence5(passedTest) {
 
@@ -44,3 +45,26 @@ function driversLicence6(passedTest) {
     
 }
 driversLicence6(true);
+*/
+
+
+
+// It's blockspoe, even thought they are having similar name "i"
+// But they are different
+/*
+let i = 23;
+
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+console.log(i);
+*/
+
+var i = 23;
+
+for (var i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+console.log(i);
