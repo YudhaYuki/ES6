@@ -468,7 +468,7 @@ var emily = new SmithPerson('Emily', 1983, 'Diaz', 'Spanish');
 
 
 ////////////////--------- MAPS ---------//////////////////
-
+/*
 const question = new Map();
 question.set('question', 'What is the official name of the latest major JavaScript version?');
 question.set(1, 'ES5');
@@ -488,7 +488,7 @@ if(question.has(4)) {
 }
 
 // question.clear();
-
+*/
 
 // question.forEach((value, key) => console.log(`This is ${key}, and it's set to ${value}`));
 /*
@@ -496,6 +496,8 @@ for (let [key, value] of question.entries()) {
     console.log(`This is ${key}, and it's set to ${value}`);
 }
 */
+
+/*
 
 for (let [key, value] of question.entries()) {
     if (typeof(key) === 'number') {
@@ -506,3 +508,49 @@ for (let [key, value] of question.entries()) {
 const ans =  parseInt(prompt('Write the correct answer'));
 
 console.log(question.get(ans === question.get('correct')));
+*/
+
+
+
+
+
+////////////////--------- CLASSES ---------//////////////////
+
+// ES5
+var Person5 = function(name, yearOfBirth, job) {
+    this.name = name;
+    this.yearOfBirth = yearOfBirth;
+    this.job = job;
+}
+
+Person5.prototype.calculateAge = function() {
+    var age = new Date().getFullYear - this.yearOfBirth;
+    console.log(age);
+}
+
+var john5 = new Person5('John', 1990, 'teacher');
+
+
+// ES6
+class Person6 {
+    constructor(name, yearOfBirth,job) {
+        this.name = name;
+        this.yearOfBirth = yearOfBirth;
+        this.job = job;
+    }
+
+    calculateAge() {
+        var age = new Date().getFullYear - this.yearOfBirth;
+        console.log(age);
+    }
+
+    // Static, not used a loot but sometime usefull
+    static greeting() {
+        console.log('Hi, there !');
+    }
+    /////////////
+}
+
+var john6 = new Person5('John', 1990, 'teacher');
+
+Person6.greeting();
